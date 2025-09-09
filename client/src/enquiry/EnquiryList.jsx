@@ -12,7 +12,7 @@ import {
 export function EnquiryList({ data, getAllenquiry, Swal, setFormdata }) {
   let editSingle = (enId) => {
     axios
-      .get(`http://localhost:8020/api/website/enquiry/find/${enId}`)
+      .get(`https://mern-crud-app-backend-8r4q.onrender.com/api/website/enquiry/find/${enId}`)
       .then((res) => {
         let data = res.data;
         setFormdata(data.resultRes);
@@ -29,7 +29,7 @@ export function EnquiryList({ data, getAllenquiry, Swal, setFormdata }) {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:8020/api/website/enquiry/delete/${delId}`)
+          .delete(`https://mern-crud-app-backend-8r4q.onrender.com/api/website/enquiry/delete/${delId}`)
           .then(() => {
             // toast.success("Data deleted");
             getAllenquiry();
