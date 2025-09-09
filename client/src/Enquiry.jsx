@@ -22,7 +22,7 @@ export default function Enquiry() {
     if (formData._id) {
       axios
         .put(
-          `http://localhost:8020/api/website/enquiry/update/${formData._id}`,
+          `https://mern-crud-app-backend-8r4q.onrender.com/api/website/enquiry/update/${formData._id}`,
           formData
         )
         .then((res) => {
@@ -40,7 +40,7 @@ export default function Enquiry() {
         });
     } else {
       axios
-        .post("http://localhost:8020/api/website/enquiry/insert", formData)
+        .post("https://mern-crud-app-backend-8r4q.onrender.com/api/website/enquiry/insert", formData)
         .then((res) => {
           console.log(res.data);
           getAllenquiry();
@@ -57,7 +57,7 @@ export default function Enquiry() {
 
   let getAllenquiry = () => {
     axios
-      .get("http://localhost:8020/api/website/enquiry/view")
+      .get("https://mern-crud-app-backend-8r4q.onrender.com/api/website/enquiry/view")
       .then((res) => {
         return res.data;
       })
